@@ -20,8 +20,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let b = prompt("Rock, Paper or Scissors?", "");
-    b = b.toLowerCase();
+    let b = prompt("Rock, Paper or Scissors?", "").toLowerCase();
     console.log("Human Choice: " + b);
     return b;
 }
@@ -43,36 +42,36 @@ function playRound(humanChoice, computerChoice) {
         console.log("You lose! Scissors beat Paper");
         computerScore = computerScore + 1;
         console.log("Computer Score: " + computerScore);
-        console.log("Human Score: " + humanScore);
+        console.log("Your Score: " + humanScore);
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         console.log("You win! Paper beats Rock.");
         humanScore = humanScore + 1;
         console.log("Computer Score: " + computerScore);
-        console.log("Human Score: " + humanScore);
+        console.log("Your Score: " + humanScore);
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("You win! Scissors beat Paper");
         humanScore = humanScore + 1;
         console.log("Computer Score: " + computerScore);
-        console.log("Human Score: " + humanScore);
+        console.log("Your Score: " + humanScore);
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
         console.log("You lose! Rock beats Scissors.");
         computerScore = computerScore + 1;
         console.log("Computer Score: " + computerScore);
-        console.log("Human Score: " + humanScore);
+        console.log("Your Score: " + humanScore);
     } else if (humanChoice === "rock" && computerChoice === "paper") {
         console.log("You lose! Paper beats Rock.");
         computerScore = computerScore + 1;
         console.log("Computer Score: " + computerScore);
-        console.log("Human Score: " + humanScore);
+        console.log("Your Score: " + humanScore);
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         console.log("You win! Rock beats Scissors.");
         humanScore = humanScore + 1;
         console.log("Computer Score: " + computerScore);
-        console.log("Human Score: " + humanScore);
+        console.log("Your Score: " + humanScore);
     } else {
         console.log("That's a draw! Try again.");
         console.log("Computer Score: " + computerScore);
-        console.log("Human Score: " + humanScore);
+        console.log("Your Score: " + humanScore);
         }
     }
 
@@ -80,12 +79,19 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
-    if (humanScore === 5) {
+    if (humanScore === 3) {
         console.log("That's the end! You win the game.");
-    } else if (computerScore === 5) {
+        console.log("Computer Score: " + computerScore);
+        console.log("Your Score: " + humanScore);
+        console.log("The game has ended in " + round + " rounds.");
+    } else if (computerScore === 3) {
         console.log("That's the end! Computer wins the game.");
+        console.log("Computer Score: " + computerScore);
+        console.log("Your Score: " + humanScore);
+        console.log("The game has ended in " + round + " rounds.");
     } else {
         playRound();
+        playGame();
     }
 
 }
